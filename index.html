@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>United States Citizenship Questionnaire</title>
+    <link type="text/css" rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/jquery-1.11.1.js"></script> 
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <div class="container">
+      <div class="row header_row">
+          <h1 class="display">United States Citizenship Questionnaire</h1>
+          <img src = "image/flag.jpg">
+      </div>
+      <div class="row" id="mid">
+          <h2 id="questNum" style="display: block;">Question #1</h2>
+            <h3 id="introQuestText">You are about the take the most important exam of your life.  Are you ready?</h3>
+            <h3 id="questText" style="text-align: left"></h3>
+
+            <ul style="list-style: none;">
+                <li>
+                    <input type="radio" name="choice" id="choice1" value="0">
+                    <label id="1stChoice" for="choice1"></label>
+                </li>
+                <li>
+                    <input type="radio" name="choice" id="choice2" value="1">
+                    <label id="2ndChoice" for="choice2"></label>
+                </li>
+                <li>
+                    <input type="radio" name="choice" id="choice3" value="2">
+                    <label id="3rdChoice" for="choice3"></label>
+                </li>
+                <li>
+                    <input type="radio" name="choice" id="choice4" value="3">
+                    <label id="4thChoice" for="choice4"></label>
+                </li>
+                
+            </ul>
+            <h3 id="triviaText" style="text-align: left"></h3>
+      </div>
+      <div id="footer" class="row">
+        <button type="button" class="btn btn-lg btn-info" id="add">Submit</button>
+        <button type="button" class="btn btn-lg btn-info" id="next">Next</button>
+        <button type="button" class="btn btn-lg btn-info" id="new">Restart</button>
+        <button type="button" class="btn btn-lg btn-info" id="begin">Begin Exam</button>
+        <p><span class="correct" id="score">0</span></p>
+
+      </div>
+   </div>   
+</body>
+</html>
