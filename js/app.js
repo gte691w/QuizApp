@@ -5,6 +5,7 @@ $(document).ready(function(){
             number: "Question #1",
             quest: "What is the supreme law of the land?",
             answers:["Magna Carta", "The Constitution", "The Declaration of Independence", "Court of Cassation"],
+            correct: "1",
             corrAns:"The Constitution",
             trivia:"Did you know that since coming into force in 1789, The Constitution has been amended twenty-seven times???",
         },
@@ -12,6 +13,7 @@ $(document).ready(function(){
             number: "Question #2",
             quest: "What do we call the first ten amendments to the Constitution?",
             answers:["The Declaration of the Rights of Man and of the Citizen", "The Charter of Rights", "The Declaration of Independence", "The Bill of Rights"],
+            correct: "3",
             corrAns:"The Bill of Rights",
             trivia:"The Bill of Rights is the basis for many Supreme Court decisions of the 20th and 21st centuries.",
         },
@@ -19,6 +21,7 @@ $(document).ready(function(){
             number: "Question #3",
             quest: "How many amendments does the Constitution have?",
             answers:["Ten (10)", "Three (3)", "Twenty-Seven (27)", "none"],
+            correct: "2",
             corrAns:"Twenty-Seven (27)",
             trivia:"On May 7, 1992 the twenty seventh amendment came into affect after an unprecedented period of 202 years and 225 days!",
         },
@@ -26,6 +29,7 @@ $(document).ready(function(){
             number: "Question #4",
             quest: "Who wrote the Declaration of Independence?",
             answers:["Thomas Jefferson", "Benjamin Franklin", "Abraham Lincoln", "George Washington"],
+            correct: "0",
             corrAns:"Thomas Jefferson",
             trivia:"The Declaration of Independence which announced that the thirteen American colonies regarded themselves as thirteen newly independent sovereign states, and no longer a part of the British Empire.",
         },
@@ -34,6 +38,7 @@ $(document).ready(function(){
             number: "Question #5",
             quest: "Who is the Father of Our Country?",
             answers:["Thomas Jefferson", "Benjamin Franklin", "Abraham Lincoln", "George Washington"],
+            correct: "3",
             corrAns:"George Washington",
             trivia:"George Washington was the first President of the United States (1789–1797), the Commander-in-Chief of the Continental Army during the American Revolutionary War, and one of the Founding Fathers of the United States.",
         },
@@ -42,6 +47,7 @@ $(document).ready(function(){
             number: "Question #6",
             quest: "During the Cold War, what was the main concern of the United States?",
             answers:["Nazi Germany", "Communism", "Slavery", "Terrorism"],
+            correct: "1",
             corrAns:"Communism",
             trivia:"The Cold War was a state of political and military tension after World War II between powers in the Western Bloc (the United States, its NATO allies and others) and powers in the Eastern Bloc (the Soviet Union and its allies in the Warsaw Pact).",
         },
@@ -50,6 +56,7 @@ $(document).ready(function(){
             number: "Question #7",
             quest: "What movement tried to end racial discrimination?",
             answers:["Civil Rights", "Miranda Rights", "Right to Bear Arms", "Jim Crow Laws"],
+            correct: "0",
             corrAns:"Civil Rights",
             trivia:"The Civil Rights movement encompasses social movements in the United States whose goals were to end racial segregation and discrimination against black Americans and to secure legal recognition and federal protection of the citizenship rights enumerated in the Constitution and federal law.",
         },
@@ -58,6 +65,7 @@ $(document).ready(function(){
             number: "Question #8",
             quest: "What does the 13 stripes represent on the flag?",
             answers:["The 13 Original Colonies", "An Unlucky Number", "A Zibra", "The Number of States"],
+            correct: "0",
             corrAns:"The 13 Original Colonies",
             trivia:"The 13 stripes represent the thirteen British colonies that declared independence from the Kingdom of Great Britain and became the first states in the Union."
         },
@@ -65,6 +73,7 @@ $(document).ready(function(){
             number: "Question #9",
             quest: "Which day do we usually celebrate Veterans Day?",
             answers:["July 4", "December 25", "February 14", "November 11"],
+            correct: "3",
             corrAns:"November 11",
             trivia:"In the United States, Veterans Day is usually observed on November 11. However, if it occurs on a Sunday then the following Monday is designated for holiday leave, and if it occurs Saturday then either Saturday or Friday may be so designated."
         },
@@ -72,13 +81,14 @@ $(document).ready(function(){
             number: "Question #10",
             quest: "In which Supreme Court Case did the Court form the basis for the exercise of judicial review?",
             answers:["West v. Barnes", "Hustler Magazine, Inc. v. Falwell", "Miranda v. Arizona", "Marbury v. Madison,"],
+            correct: "3",
             corrAns:"Marbury v. Madison",
             trivia:"Marbury v. Madison helped define the boundary between the constitutionally separate executive and judicial branches of the American form of government."
         }
 
     ];
 
-    var correctAns = 0;
+    var correctAns = 0
     var finish = false;
     var questAns = 0;
     var questNum = questAns + 1;
@@ -104,7 +114,9 @@ $(document).ready(function(){
         console.log("Quiz reset");
         restartQuiz();
         $('ul').hide();
+        $('#triviaText').hide();
         $("#introQuestText").text("You think you're ready this time?").css('text-align', 'center');
+        $("#introQuestText").show();
         $("#questText").hide();
         
     });
@@ -152,7 +164,7 @@ $(document).ready(function(){
         var userGuess = $("input[type='radio']:checked").val();
         $("#submit").hide();
         $("#score").show();
-        if (userGuess === question[questAns].corrAns) {
+        if(userGuess === question[questAns].correct) {
             console.log("userGuess is "+ userGuess);
             console.log("correct");
             $("#triviaText").show();
@@ -177,7 +189,7 @@ $(document).ready(function(){
             questAns++;
             $("#score").text("Current score: " + correctAns +"/" + questAns);
             if(questAns === 10) {
-                 $("#score").addClass("final");
+               $("#score").addClass("final");
                $("#score").text("Your final score is " + correctAns +"/" + questAns);
                return;
             }
@@ -188,6 +200,7 @@ $(document).ready(function(){
 	
 		$("#next").click(function() {
         $("input:checked").removeAttr("checked");
+        $('#triviaText').hide();
         askQuest ();
         
     });  

@@ -137,6 +137,11 @@ color: white;
 	text-align: left;
 }
 
+#triviaText{
+	color: #000099;
+	padding-left: 8px;
+}
+
 ul{
 	display: none;
 }
