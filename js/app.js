@@ -115,7 +115,7 @@ $(document).ready(function(){
         restartQuiz();
         $('ul').hide();
         $('#triviaText').hide();
-        $("#introQuestText").text("You think you're ready this time?").css('text-align', 'center');
+        $("#introQuestText").text("You think you're ready this time?").css('text-align', 'center').hide().slideDown();
         $("#introQuestText").show();
         $("#questText").hide();
         
@@ -123,13 +123,14 @@ $(document).ready(function(){
 
     $("#begin").click(function() {
         console.log("Begin Exam button pressed");
+        $("input:checked").removeAttr("checked");
         $("#begin").hide();
         $("#introQuestText").hide();
         $("#triviaText").hide();
-        $("#add").show();
-        $("#new").show();
-        $("#questNum").show();
-        $("#ul").show();
+        $("#questNum").fadeIn(1000);
+        $("#ul").hide().fadeIn(1500);
+        $("#add").hide().fadeIn(2500);
+        $("#new").hide().fadeIn(2000);
         $("#score").hide();
         $("#tot").show();
         $("#res").show();
@@ -139,11 +140,11 @@ $(document).ready(function(){
 
     function askQuest() {
         console.log("Question number " + questNum);
-            $("#questText").text(question[questAns].quest);
-            $("#1stChoice").text(question[questAns].answers[0]);
-            $("#2ndChoice").text(question[questAns].answers[1]);
-            $("#3rdChoice").text(question[questAns].answers[2]);
-            $("#4thChoice").text(question[questAns].answers[3]);
+            $("#questText").text(question[questAns].quest).hide().slideDown();
+            $("#1stChoice").text(question[questAns].answers[0]).hide().fadeIn(1000);
+            $("#2ndChoice").text(question[questAns].answers[1]).hide().fadeIn(1500);
+            $("#3rdChoice").text(question[questAns].answers[2]).hide().fadeIn(2000);
+            $("#4thChoice").text(question[questAns].answers[3]).hide().fadeIn(2500);
             $("#questNum").text(question[questAns].number);
             $("ul").show();
             
@@ -168,7 +169,7 @@ $(document).ready(function(){
             console.log("userGuess is "+ userGuess);
             console.log("correct");
             $("#triviaText").show();
-            $("#triviaText").text("CORRECT! " + question[questAns].trivia);
+            $("#triviaText").text("CORRECT! " + question[questAns].trivia).hide().slideDown();
             correctAns ++;
             questAns++;
             if(questAns === 10) {
@@ -185,7 +186,7 @@ $(document).ready(function(){
         else {
             console.log("wrong");
             $("#triviaText").show();
-            $("#triviaText").text("WRONG! " + question[questAns].corrAns);
+            $("#triviaText").text("WRONG! " + question[questAns].corrAns).hide().slideDown();
             questAns++;
             $("#score").text("Current score: " + correctAns +"/" + questAns);
             if(questAns === 10) {
@@ -200,7 +201,7 @@ $(document).ready(function(){
 	
 		$("#next").click(function() {
         $("input:checked").removeAttr("checked");
-        $('#triviaText').hide();
+        $('#triviaText').hide().slideUp();
         askQuest ();
         
     });  
