@@ -101,39 +101,29 @@ $(document).ready(function(){
         correctAns = 0;
         finish = false;
         questAns = 0;
-        $("#score").hide();
-        $("#add").hide();
+        $("#score, #add, #next, #new, #questNum").hide();
         $("#add").prop("disabled", true);
-        $("#next").hide();
-        $("#new").hide();
-        $("#questNum").hide();
         $("#begin").show();
     }
     
     $("#new").click(function() {
         console.log("Quiz reset");
         restartQuiz();
-        $('ul').hide();
-        $('#triviaText').hide();
+        $('ul, #triviaText, #questText').hide();
         $("#introQuestText").text("You think you're ready this time?").css('text-align', 'center').hide().slideDown();
         $("#introQuestText").show();
-        $("#questText").hide();
         
     });
 
     $("#begin").click(function() {
         console.log("Begin Exam button pressed");
         $("input:checked").removeAttr("checked");
-        $("#begin").hide();
-        $("#introQuestText").hide();
-        $("#triviaText").hide();
+        $("#begin, #introQuestText, #triviaText, #score").hide();
         $("#questNum").fadeIn(1000);
         $("#ul").hide().fadeIn(1500);
         $("#add").hide().fadeIn(2500);
         $("#new").hide().fadeIn(2000);
-        $("#score").hide();
-        $("#tot").show();
-        $("#res").show();
+        $("#tot, #res").show();
         questNum = questAns+1;
         askQuest();
     });
@@ -165,6 +155,7 @@ $(document).ready(function(){
         var userGuess = $("input[type='radio']:checked").val();
         $("#submit").hide();
         $("#score").show();
+        $("#add").prop("disabled",true);
         if(userGuess === question[questAns].correct) {
             console.log("userGuess is "+ userGuess);
             console.log("correct");
