@@ -40,7 +40,7 @@ $(document).ready(function(){
             answers:["Thomas Jefferson", "Benjamin Franklin", "Abraham Lincoln", "George Washington"],
             correct: "3",
             corrAns:"George Washington",
-            trivia:"George Washington was the first President of the United States (1789–1797), the Commander-in-Chief of the Continental Army during the American Revolutionary War, and one of the Founding Fathers of the United States.",
+            trivia:"George Washington was the first President of the United States (1789–1797), the Commander-in-Chief of the Continental Army during the Revolutionary War, and one of the Founding Fathers of the United States.",
         },
 
         {
@@ -49,7 +49,7 @@ $(document).ready(function(){
             answers:["Nazi Germany", "Communism", "Slavery", "Terrorism"],
             correct: "1",
             corrAns:"Communism",
-            trivia:"The Cold War was a state of political and military tension after World War II between powers in the Western Bloc (the United States, its NATO allies and others) and powers in the Eastern Bloc (the Soviet Union and its allies in the Warsaw Pact).",
+            trivia:"The Cold War was a state of political and military tension after World War II between powers in the Western Bloc and powers in the Eastern Bloc.",
         },
 
         {
@@ -58,7 +58,7 @@ $(document).ready(function(){
             answers:["Civil Rights", "Miranda Rights", "Right to Bear Arms", "Jim Crow Laws"],
             correct: "0",
             corrAns:"Civil Rights",
-            trivia:"The Civil Rights movement encompasses social movements in the United States whose goals were to end racial segregation and discrimination against black Americans and to secure legal recognition and federal protection of the citizenship rights enumerated in the Constitution and federal law.",
+            trivia:"The Civil Rights movement encompasses social movements in the United States whose goals were to end racial segregation and discrimination against black Americans.",
         },
 
         {
@@ -67,7 +67,7 @@ $(document).ready(function(){
             answers:["The 13 Original Colonies", "An Unlucky Number", "A Zibra", "The Number of States"],
             correct: "0",
             corrAns:"The 13 Original Colonies",
-            trivia:"The 13 stripes represent the thirteen British colonies that declared independence from the Kingdom of Great Britain and became the first states in the Union."
+            trivia:"The 13 stripes represent the thirteen British colonies that declared independence from the Kingdom of Great Britain creating the first states in the Union."
         },
         {
             number: "Question #9",
@@ -75,7 +75,7 @@ $(document).ready(function(){
             answers:["July 4", "December 25", "February 14", "November 11"],
             correct: "3",
             corrAns:"November 11",
-            trivia:"In the United States, Veterans Day is usually observed on November 11. However, if it occurs on a Sunday then the following Monday is designated for holiday leave, and if it occurs Saturday then either Saturday or Friday may be so designated."
+            trivia:"In the United States, Veterans Day is usually observed on November 11, unless it occurs on a Sunday, the following Monday is designated for holiday leave, and if it occurs Saturday then either Saturday or Friday may be so designated."
         },
         {
             number: "Question #10",
